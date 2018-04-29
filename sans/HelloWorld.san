@@ -1,0 +1,15 @@
+<template>
+    <div id="helloworld">
+        <h1>Hello, {{ msg }}</h1>
+    </div>
+</template>
+
+<script>
+    export default {
+        initData() {
+            return {
+                msg: 'world'
+            };
+        }
+    }
+</script

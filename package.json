@@ -1,0 +1,23 @@
+{
+  "name": "baidu-ife-2018",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PCDotFan/baidu-ife-2018.git",
+  "author": "PCDotFan <pc@edu.ax>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development parcel index.html",
+    "build": "parcel build index.html -d build --public-url ./",
+    "watch": "parcel watch index.html"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "san": "^3.5.7",
+    "san-router": "^1.2.0",
+    "sans": "^1.0.0",
+    "uikit": "^3.0.0-beta.42"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
