@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                <h1 class="title">
+                    Hello,
+                </h1>
+                <h2 class="subtitle">
+                    {{ msg }}
+                </h2>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<script>
+import '../assets/sass/index.sass'
+export default {
+    initData: function () {
+        return {
+            msg: 'world'
+        }
+    }
+}
+</script>
