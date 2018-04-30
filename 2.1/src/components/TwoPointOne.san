@@ -28,7 +28,7 @@
                         <div class="overview">
                             <p>姓名：{{ user.name }}</p>
                             <p>年龄：{{ user.age }}</p>
-                            <p>简介：{{ user.introduction }}</p>
+                            <p>简介：{{ user.des }}</p>
                             <a class="button is-danger" on-click="removeInfo">移除信息</a>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export default {
         user: DataTypes.shape({
             name: DataTypes.string,
             age: DataTypes.number,
-            introduction: DataTypes.string
+            des: DataTypes.string
         })
     },
     initData: function () {
@@ -65,7 +65,7 @@ export default {
             user: {
                 name: '',
                 age: 0,
-                introduction: ''
+                des: ''
             }
         }
     },
