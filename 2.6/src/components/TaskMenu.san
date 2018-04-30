@@ -1,0 +1,24 @@
+<template>
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-body">
+            <p>标题：<slot name="title" var-bold="true">{{ title }}</slot></p>
+            <p>内容：<slot name="content">{{ content }}</slot></p>
+            <p>时间：<slot name="time">{{ time }}</slot></p>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    initData: function () {
+        return {
+            /*
+            title: '',
+            content: '',
+            time: '',
+            bold: false
+            */
+        }
+    }
+}
+</script>

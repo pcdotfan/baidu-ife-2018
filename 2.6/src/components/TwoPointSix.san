@@ -1,0 +1,42 @@
+<template>
+    <div>
+        <div class="uk-section uk-section-primary uk-light">
+            <div class="uk-container">
+                <h3>MVVM 2.6</h3>
+            </div>
+        </div>
+        <div class="uk-container uk-margin-top">
+            <div class="uk-grid-medium uk-child-width-1-4">
+                <div>
+                    <p class="uk-text-center">任务一</p>
+                    <task-menu title="测试">
+                        <span slot="content">测试内容</span>
+                    </task-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    .container-small {
+        max-width: 1024px !important;
+    }
+</style>
+
+
+<script>
+import TaskMenu from './TaskMenu.san'
+import '../assets/less/index.less'
+export default {
+    components: {
+        'task-menu': TaskMenu
+    },
+    initData: function () {
+        return {
+            // 初始化
+            test: '123'
+        }
+    }
+}
+</script>
