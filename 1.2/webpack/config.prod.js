@@ -4,9 +4,6 @@ const webpackConfigBase = require("./config.base.js");
 
 module.exports = webpackMerge(webpackConfigBase, {
   mode: 'production',
-  module: {
-    rules: []
-  },
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     port: 8080,
