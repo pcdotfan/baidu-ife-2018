@@ -52,7 +52,11 @@ import { DataTypes } from 'san';
 import '../assets/sass/index.sass'
 export default {
     dataTypes: {
-        user: DataTypes.object
+        user: DataTypes.shape({
+            name: DataTypes.string,
+            age: DataTypes.number,
+            introduction: DataTypes.string
+        })
     },
     initData: function () {
         return {
