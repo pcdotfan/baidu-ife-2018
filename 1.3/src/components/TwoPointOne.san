@@ -1,0 +1,70 @@
+<template>
+    <div>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                <h1 class="title">
+                    2.1
+                </h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <div class="columns">
+                            <div class="column">               
+                                <input class="input" type="text" placeholder="姓名" value="{= user.name =}">
+                            </div>
+                            <div class="column">
+                                <input class="input" type="text" placeholder="年龄" value="{= user.age =}">
+                            </div>
+                            <div class="column">
+                                <input class="input" type="text" placeholder="简介" value="{= user.introduction =}">
+                            </div>
+                        </div>
+                        <h3>信息</h3>
+                        <div class="overview">
+                            <p>姓名：{{ user.name }}</p>
+                            <p>年龄：{{ user.age }}</p>
+                            <p>简介：{{ user.introduction }}</p>
+                            <a class="button is-danger" on-click="removeInfo">移除信息</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</template>
+
+<style scoped>
+.container {
+    max-width: 680px;
+}
+.card {
+    margin-top: 20px;
+}
+</style>
+
+<script>
+import { DataTypes } from 'san';
+import '../assets/sass/index.sass'
+export default {
+    dataTypes: {
+        user: DataTypes.object
+    },
+    initData: function () {
+        return {
+            user: {
+                name: '',
+                age: 0,
+                introduction: ''
+            }
+        }
+    },
+    removeInfo: function() {
+        this.data.set('user', {})
+    }
+}
+</script>
