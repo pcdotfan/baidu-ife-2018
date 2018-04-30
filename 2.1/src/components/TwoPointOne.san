@@ -18,7 +18,7 @@
                                 <input class="input" type="text" placeholder="姓名" value="{= user.name =}">
                             </div>
                             <div class="column">
-                                <input class="input" type="text" placeholder="年龄" value="{= user.age =}">
+                                <input class="input" type="number" placeholder="年龄" value="{= user.age =}">
                             </div>
                             <div class="column">
                                 <input class="input" type="text" placeholder="简介" value="{= user.introduction =}">
