@@ -37,7 +37,7 @@ export default {
     // 在 messages 内定义子组件的 messageUpAndUp 方法，用于接收消息后展示
     messages: {
         'messageUpAndUp': function (arg) {
-            this.data.set('msg', arg.msg)
+            this.data.set('msg', arg.value)
         }
     }
 }
