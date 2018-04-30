@@ -1,0 +1,81 @@
+<template>
+    <div>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                <h1 class="title">
+                    2.2
+                </h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <table class="table is-bordered">
+                            <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>审核状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <item s-for="item in items"></item>
+                            </tbody>
+                        </table>
+                        <input class="input" type="text" placeholder="请输入姓名">
+                        <button class="button is-primary add-name-button">添加</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</template>
+
+<style scoped>
+.container {
+    max-width: 680px;
+}
+.card {
+    margin-top: 20px;
+}
+.add-name-button {
+    margin-top: 10px;
+}
+</style>
+
+<script>
+import { DataTypes } from 'san';
+import Item from './Item.san';
+import '../assets/sass/index.sass'
+export default {
+    dataTypes: {
+        // 为数据分别指定类型
+        user: DataTypes.shape({
+            name: DataTypes.string,
+            age: DataTypes.number,
+            introduction: DataTypes.string
+        })
+    },
+    components: {
+        'item': Item
+    },
+    initData: function () {
+        return {
+            // 初始化
+            items: [
+                {
+                    name: '张三',
+                    type: 'pending',
+                },
+                {
+                    name: '李四',
+                    type: 'disapproved'
+                }
+            ]
+        }
+    },
+}
+</script>

@@ -1,0 +1,35 @@
+{
+  "name": "2.2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Unissn7",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-serve --config ./webpack/config.dev.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "bulma": "^0.7.1",
+    "css-loader": "^0.28.11",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "san": "^3.5.7",
+    "san-loader": "^0.0.7",
+    "san-router": "^1.2.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.6.0",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^0.3.1"
+  }
+}

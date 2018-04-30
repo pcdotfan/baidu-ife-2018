@@ -1,0 +1,29 @@
+<template>
+    <tr>
+        <th>{{ item.name }}</th>
+        <th>{{ item.type }}</th>
+        <th s-if="isPending"><button class="button is-info" on-click="approveItem">审核</button></th>
+        <th s-else><button class="button is-danger" on-click="removeItem">删除</button></th>
+    </tr>
+</template>
+
+<script>
+export default {
+    initData: function() {
+        return {
+            item: {
+                name: '',
+                type: 'pending'
+            }
+        }
+    },
+    removeItem: function() {
+        // 触发后调用 data.set 置空 item
+        this.data.set('item', {})
+    },
+    approveItem: function() {
+        // 触发后调用 data.set 置空 item
+        this.data.set('item', {})
+    }
+}
+</script>
