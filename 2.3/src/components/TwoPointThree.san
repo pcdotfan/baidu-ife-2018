@@ -1,0 +1,33 @@
+<template>
+    <div>
+        <div id="block" class="{{ isBlue ? 'blue' : 'red' }}" on-click="toBlue"></div>
+    </div>
+</template>
+
+<style>
+    #block {
+        width: 100px;
+        height: 100px;
+    }
+    .red {
+        background:red;
+    }
+    .blue {
+        background: blue;
+    }
+</style>
+
+<script>
+import { DataTypes } from 'san';
+export default {
+    initData: function () {
+        return {
+            // 初始化
+            isBlue: false
+        }
+    },
+    toBlue: function () {
+        this.data.set('isBlue', true)
+    }
+}
+</script>

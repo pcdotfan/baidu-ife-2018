@@ -91,10 +91,10 @@ export default {
         this.data.removeAt('items', index)
     },
     approveItem: function(index) {
-        this.data.set(`items[${index}].type`, 'approved');
+        this.data.set(`items[${index}].type`, 'approved')
     },
     addItem: function() {
-        this.data.push('items', this.data.get('newItem'));
+        this.data.push('items', this.data.get('newItem'))
     }
 }
 </script>

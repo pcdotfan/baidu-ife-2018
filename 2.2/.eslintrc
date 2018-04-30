@@ -1,3 +1,6 @@
 {
-  "extends": "standard"
+  "plugins": ["html"],
+  "settings": {
+    "html/html-extensions": [".san"]
+  }
 }
