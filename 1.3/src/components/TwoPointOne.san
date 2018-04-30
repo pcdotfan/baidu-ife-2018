@@ -52,6 +52,7 @@ import { DataTypes } from 'san';
 import '../assets/sass/index.sass'
 export default {
     dataTypes: {
+        // 为数据分别指定类型
         user: DataTypes.shape({
             name: DataTypes.string,
             age: DataTypes.number,
@@ -60,6 +61,7 @@ export default {
     },
     initData: function () {
         return {
+            // 初始化
             user: {
                 name: '',
                 age: 0,
@@ -68,6 +70,7 @@ export default {
         }
     },
     removeInfo: function() {
+        // 触发后调用 data.set 置空 user
         this.data.set('user', {})
     }
 }
