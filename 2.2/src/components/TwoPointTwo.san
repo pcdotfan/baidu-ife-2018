@@ -1,66 +1,72 @@
 <template>
     <div>
-        <section class="hero is-primary">
-            <div class="hero-body">
-                <div class="container">
-                <h1 class="title">
-                    2.2
-                </h1>
+        <div class="uk-section uk-section-primary uk-light">
+            <div class="uk-container">
+                <h3>MVVM 2.2</h3>
+            </div>
+        </div>
+        <div class="container-small uk-container uk-margin-top">
+            <div class="uk-card uk-card-default uk-margin">
+                <div class="uk-card-body">
+                    <table class="uk-table uk-table-middle uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th class="uk-width-small">姓名</th>
+                                <th>审核状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr s-for="item, index in items">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.type | typeDisplayed() }}</td>
+                                <td s-if="item.type === 'disapproved'"><button class="uk-button uk-button-primary" type="button" on-click="approveItem(index)">审核</button></td>
+                                <td s-else><button class="uk-button uk-button-danger" type="button" on-click="removeItem(index)">删除</button></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </section>
-        <main class="container">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <table class="table is-bordered">
-                            <thead>
-                                <tr>
-                                    <th>姓名</th>
-                                    <th>审核状态</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <item s-for="item in items"></item>
-                            </tbody>
-                        </table>
-                        <input class="input" type="text" placeholder="请输入姓名">
-                        <button class="button is-primary add-name-button">添加</button>
-                    </div>
-                </div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <input class="uk-input uk-margin" value="{= newItem.name =}" placeholder="请输入姓名">
+                <button class="uk-button uk-button-primary uk-float-right" on-click="addItem">添加</button>
             </div>
-        </main>
+        </div>
     </div>
 </template>
 
-<style scoped>
-.container {
-    max-width: 680px;
-}
-.card {
-    margin-top: 20px;
-}
-.add-name-button {
-    margin-top: 10px;
-}
+<style>
+    .container-small {
+        max-width: 680px !important;
+    }
 </style>
 
 <script>
 import { DataTypes } from 'san';
-import Item from './Item.san';
-import '../assets/sass/index.sass'
+import '../assets/less/index.less'
 export default {
     dataTypes: {
         // 为数据分别指定类型
-        user: DataTypes.shape({
+        items: DataTypes.array,
+        item: DataTypes.shape({
             name: DataTypes.string,
-            age: DataTypes.number,
-            introduction: DataTypes.string
+            type: DataTypes.oneOf(['pending', 'approved', 'disapproved']),
+        }),
+        newItem: DataTypes.shape({
+            name: DataTypes.string,
+            type: DataTypes.oneOf(['pending', 'approved', 'disapproved']),
         })
     },
-    components: {
-        'item': Item
+    filters: {
+        typeDisplayed: function (type) {
+            const titles = {
+                'pending': '待审核',
+                'approved': '合格',
+                'disapproved': '不合格'
+            };
+            return titles[type]
+        }
     },
     initData: function () {
         return {
@@ -74,8 +80,21 @@ export default {
                     name: '李四',
                     type: 'disapproved'
                 }
-            ]
+            ],
+            newItem: {
+                name: '',
+                type: 'pending'
+            }
         }
     },
+    removeItem: function(index) {
+        this.data.removeAt('items', index)
+    },
+    approveItem: function(index) {
+        this.data.set(`items[${index}].type`, 'approved');
+    },
+    addItem: function() {
+        this.data.push('items', this.data.get('newItem'));
+    }
 }
 </script>

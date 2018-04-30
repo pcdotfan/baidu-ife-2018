@@ -5,8 +5,8 @@ module.exports = {
   module: {
     rules: [
       {
-          test: /\.san$/,
-          loader: 'san-loader'
+        test: /\.san$/,
+        loader: "san-loader"
       },
       {
         test: /\.js$/,
@@ -25,14 +25,18 @@ module.exports = {
         ]
       },
       {
-        test: /\.sass$/,
-        use: [{
-          loader: "style-loader" // creates style nodes from JS strings
-          }, {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
             loader: "css-loader" // translates CSS into CommonJS
-          }, {
-            loader: "sass-loader" // compiles Sass to CSS
-          }]
+          },
+          {
+            loader: "less-loader" // compiles Less to CSS
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -57,13 +61,13 @@ module.exports = {
             }
           }
         ]
-      },
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/index.html"),
-      filename: "index.html",
+      filename: "index.html"
     })
   ]
 };
