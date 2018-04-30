@@ -1,0 +1,28 @@
+<template>
+    <div>
+        <child-child-comp></child-child-comp>
+        <p>我是父组件：{{ msg }}</p>
+    </div>
+</template>
+
+<script>
+import ChildrensChildrenComp from './ChildrensChildrenComp.san';
+export default {
+    components: {
+        'child-child-comp': ChildrensChildrenComp
+    },
+    initData: function () {
+        return {
+            // 初始化
+            msg: '静静等待用户输入'
+        }
+    },
+    // 在 messages 内定义子子组件的 messageUp 方法，用于接收消息后向上派发消息
+    messages: {
+        'messageUp': function (arg) { // 这里方法名应该引号括住，messages 是一个对象（之前竟然没报错……
+            this.data.set('msg', arg.msg)
+            this.dispatch('messageUpAndUp', arg.msg)
+        }
+    }
+}
+</script>

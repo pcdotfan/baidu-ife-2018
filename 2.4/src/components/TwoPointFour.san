@@ -1,0 +1,44 @@
+<template>
+    <div>
+        <div class="uk-section uk-section-primary uk-light">
+            <div class="uk-container">
+                <h3>MVVM 2.4</h3>
+            </div>
+        </div>
+        <div class="container-small uk-container uk-margin-top">
+            <div class="uk-card uk-card-default uk-card-body">
+                <child-comp></child-comp>
+                <p>我是更高层父组件：{{ msg }}</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    .container-small {
+        max-width: 680px !important;
+    }
+</style>
+
+
+<script>
+import ChildrenComp from './ChildrenComp.san';
+import '../assets/less/index.less'
+export default {
+    components: {
+        'child-comp': ChildrenComp
+    },
+    initData: function () {
+        return {
+            // 初始化
+            msg: '我也静静等待用户输入'
+        }
+    },
+    // 在 messages 内定义子组件的 messageUpAndUp 方法，用于接收消息后展示
+    messages: {
+        'messageUpAndUp': function (arg) {
+            this.data.set('msg', arg.msg)
+        }
+    }
+}
+</script>

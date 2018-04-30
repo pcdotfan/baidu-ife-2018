@@ -1,0 +1,24 @@
+<template>
+    <div>
+        <p class="uk-margin-small">我是子组件：</p>
+        <input class="uk-input uk-margin-small-top uk-margin" value="{= msg =}">
+        <button class="uk-button uk-button-primary uk-float-right" on-click="message">通知父组件</button>
+        <div class="uk-clearfix"></div>
+    </div>
+</template>
+
+<script>
+export default {
+    initData: function () {
+        return {
+            // 初始化
+            msg: ''
+        }
+    },
+    // 定义 message 函数用于向上派发消息
+    message: function() {
+        let msg = this.data.get('msg')
+        this.dispatch('messageUp', msg)
+    }
+}
+</script>
