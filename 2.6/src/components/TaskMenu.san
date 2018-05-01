@@ -1,10 +1,15 @@
 <template>
     <div>
+        <!-- 给 slot 设定默认值，默认值为 props 传递的内容。这就实现了「既可直接参数定义 又可简单的命名定义」的需求 -->
+        <h3 slot="title" class="uk-text-center uk-margin">{{ title }}</h3>
+
+        <!-- 使用 props 实现组件间通信，将父级传入的数据再发送给 Cards 组件内部 -->
         <cards tasks="{{ tasks }}">
             <div>
+                <!-- 可以自定义内部结构，也就完成了「对 标题 进行加粗处理」的需求 -->
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-body">
-                        <p>标题：{{ title }}</p>
+                        <strong>标题：{{ title }}</strong>
                         <p>内容：{{ content }}</p>
                         <p>时间：{{ time }}</p>
                     </div>
@@ -21,7 +26,7 @@ export default {
         'cards': Cards
     },
     initData: function () {
-        
+        title: ''
     }
 }
 </script>

@@ -6,7 +6,8 @@
             </div>
         </div>
         <div class="uk-container uk-margin-top">
-            <task-menu tasks="{{ tasks }}"></task-menu>
+            <!-- 使用 props 实现组件间通信 -->
+            <task-menu tasks="{{ tasks }}" title="任务栏"></task-menu>
         </div>
     </div>
 </template>
@@ -16,7 +17,6 @@
         max-width: 1024px !important;
     }
 </style>
-
 
 <script>
 import TaskMenu from './TaskMenu.san'
