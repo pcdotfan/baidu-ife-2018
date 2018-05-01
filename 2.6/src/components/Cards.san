@@ -1,5 +1,6 @@
 <template>
     <div class="uk-grid-medium uk-child-width-1-4" uk-grid>
+        <!-- 循环输出 task，分别设定三个用于 slot 内部的变量 -->
         <slot s-for="task in tasks"
             var-title="task.title" 
             var-content="task.content" 
