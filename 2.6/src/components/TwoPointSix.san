@@ -6,14 +6,7 @@
             </div>
         </div>
         <div class="uk-container uk-margin-top">
-            <div class="uk-grid-medium uk-child-width-1-4">
-                <div>
-                    <p class="uk-text-center">任务一</p>
-                    <task-menu title="测试">
-                        <span slot="content">测试内容</span>
-                    </task-menu>
-                </div>
-            </div>
+            <task-menu tasks="{{ tasks }}"></task-menu>
         </div>
     </div>
 </template>
@@ -35,7 +28,33 @@ export default {
     initData: function () {
         return {
             // 初始化
-            test: '123'
+            tasks: [
+                {
+                    title: '插槽测试1',
+                    content: '这是第一个任务',
+                    time: '2018-05-01'  
+                },
+                {
+                    title: '插槽测试2',
+                    content: '这是第二个任务',
+                    time: '2018-05-02'  
+                },
+                {
+                    title: '插槽测试3',
+                    content: '这是第三个任务',
+                    time: '2018-05-03'  
+                },
+                {
+                    title: '插槽测试4',
+                    content: '这是第四个任务',
+                    time: '2018-05-01'  
+                },
+                {
+                    title: '插槽测试5',
+                    content: '这是第五个任务',
+                    time: '2018-05-01'  
+                },
+            ]
         }
     }
 }

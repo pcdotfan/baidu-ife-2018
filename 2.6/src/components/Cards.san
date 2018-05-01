@@ -1,0 +1,15 @@
+<template>
+    <div class="uk-grid-medium uk-child-width-1-4" uk-grid>
+        <slot s-for="task in tasks"
+            var-title="task.title" 
+            var-content="task.content" 
+            var-time="task.time">
+        </slot>
+    </div>
+</template>
+
+<script>
+export default {
+  
+}
+</script>

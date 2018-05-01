@@ -1,24 +1,27 @@
 <template>
-    <div class="uk-card uk-card-default">
-        <div class="uk-card-body">
-            <p>标题：<slot name="title" var-bold="true">{{ title }}</slot></p>
-            <p>内容：<slot name="content">{{ content }}</slot></p>
-            <p>时间：<slot name="time">{{ time }}</slot></p>
-        </div>
-    </div>
+    <div>
+        <cards tasks="{{ tasks }}">
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body">
+                        <p>标题：{{ title }}</p>
+                        <p>内容：{{ content }}</p>
+                        <p>时间：{{ time }}</p>
+                    </div>
+                </div>
+            </div>
+        </cards>
+    </div>  
 </template>
 
 <script>
+import Cards from './Cards.san'
 export default {
+    components: {
+        'cards': Cards
+    },
     initData: function () {
-        return {
-            /*
-            title: '',
-            content: '',
-            time: '',
-            bold: false
-            */
-        }
+        
     }
 }
 </script>
