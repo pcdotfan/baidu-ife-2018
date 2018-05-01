@@ -1,0 +1,52 @@
+<template>
+  <input 
+    class="{= class =}" 
+    value="{= value =}" 
+    placeholder="{= placeholder =}"
+    disabled="{= disabled =}"
+    >
+</template>
+
+<style lang="less" scoped>
+.input {
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
+    padding: 10px;
+    background: #fff;
+    color: #666666;
+    border: 1px solid #e5e5e5;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        border-color: #b2b2b2
+    }
+
+    &:focus {
+        color: #333;
+        border-color: #b2b2b2;
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: #f7f7f7;
+        color: #bbbbbb;
+        border-color: #e5e5e5 !important;
+    }
+}
+
+.is-warning {
+    border-color: #fdd7d8;
+}
+
+.input-label {
+    font-size: 12px;
+    padding: 8px;
+}
+</style>
+
+<script>
+export default {
+
+}
+</script>

@@ -8,16 +8,22 @@
         </div>
         <div class="container margin">
             <h2 class="title">基础状态</h2>
-            <input class="input margin-small" placeholder="请输入文字">
-            <label><input class="checkbox margin-small" type="checkbox" checked> B</label>
+            <san-input class="input margin-small" placeholder="请输入文字" />
+            <label><input class="checkbox" type="checkbox" checked>
+            B
+            </label>
         </div>
     </div>
 </template>
 
 <script>
+import SanInput from './SanInput.san'
 import '../assets/css/normalize.css'
 import '../assets/less/index.less'
 export default {
+    components: {
+        'san-input': SanInput
+    },
     initData: function () {
         return {
             // 初始化
