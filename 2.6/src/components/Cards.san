@@ -4,6 +4,9 @@
             var-title="task.title" 
             var-content="task.content" 
             var-time="task.time">
+            <p>标题：{{ title }}</p>
+            <p>内容：{{ content }}</p>
+            <p>时间：{{ time }}</p>
         </slot>
     </div>
 </template>
